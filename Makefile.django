@@ -1,0 +1,30 @@
+project=mydjangoapp
+
+all: venv.install app.up
+
+venv.install: 
+	. venv/bin/activate && pip install -r requirements.txt
+
+app.up:
+	@python manage.py runserver
+
+app.shell:
+	@python manage.py shell
+
+db.drop:
+	@python manage.py flush
+
+db.shell:
+	@python manage.py dbshell
+
+db.flush:
+	@python manage.py sqlflush
+
+db.new_migration:
+	@python manage.py makemigrations
+
+db.migrate:
+	@python manage.py migrate
+
+db.loadfixtures: 
+	@python manage.py loaddata ${NAME}
