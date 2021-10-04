@@ -1,0 +1,12 @@
+PROJECT=mygoapp
+
+all: build
+
+build:
+	go build -o bin/main main.go
+
+start: 
+	@./bin/main
+
+clean:
+	@rm ./bin/main
