@@ -1,0 +1,9 @@
+PROJECT=myhugoapp
+
+all: build
+
+new:
+	@hugo new blog/$(POST_NAME)
+
+start: 
+	@hugo serve -D
